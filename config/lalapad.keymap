@@ -180,19 +180,28 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        LAYER9 {
+            bindings = <&to 9>;
+            key-positions = <37 38>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         DEFAULT_LAYER {
             display-name = "Default";
-            sensor-bindings = <&scroll_down_up>, <&scroll_up_down>;
+            sensor-bindings = <&scroll_up_down>, <&scroll_up_down>;
 
             bindings = <
-&kp TAB    &kp Q         &kp W         &kp E            &kp R             &kp T          &kp Y          &kp U          &kp I            &kp O       &kp P           &mt EQUAL MINUS
-&kp ESC    &kp A         &kp S         &kp D            &kp F             &kp G          &kp H          &kp J          &kp K            &kp L       &mt2 SEMI LBKT  &mt2 SQT RBKT
-&kp LSHFT  &kp Z         &kp X         &kp C            &kp V             &kp B          &kp N          &kp M          &kp COMMA        &kp PERIOD  &mt2 UP SLASH   &mt2 RIGHT_SHIFT BSLH
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 8 SPACE      &lt 1 LANGUAGE_1  &lt 2 LANG2    &lt 3 LANG1    &kp BACKSPACE  &lt 2 ENTER      &kp LEFT    &kp DOWN        &kp RIGHT
-                         &allow_end    &allow_pagedown  &allow_home       &allow_pageup  &allow_pageup  &allow_home    &allow_pagedown  &allow_end
+&kp TAB    &kp Q         &kp W         &kp E            &kp R             &kp T          &kp Y          &kp U                 &kp I            &kp O       &kp P           &mt EQUAL MINUS
+&kp ESC    &kp A         &kp S         &kp D            &kp F             &kp G          &kp H          &kp J                 &kp K            &kp L       &mt2 SEMI LBKT  &mt2 SQT RBKT
+&kp LSHFT  &kp Z         &kp X         &kp C            &kp V             &kp B          &kp N          &kp M                 &kp COMMA        &kp PERIOD  &mt2 UP SLASH   &mt2 RSHIFT BSLH
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 8 SPACE      &lt 1 LANGUAGE_1  &lt 3 LANG2    &lt 3 LANG1    &mt RSHIFT BACKSPACE  &lt 2 ENTER      &kp LEFT    &kp DOWN        &kp RIGHT
+                         &allow_end    &allow_pagedown  &allow_home       &allow_pageup  &allow_pageup  &allow_home           &allow_pagedown  &allow_end
             >;
         };
 
@@ -201,11 +210,11 @@
             sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
 
             bindings = <
-&kp TILDE       &kp NUMBER_1  &kp NUMBER_2     &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &kp HOME       &kp PRINTSCREEN  &kp KP_SLASH     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9
-&trans          &kp NUMBER_6  &kp NUMBER_7     &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp PAGE_UP    &kp END          &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6
-&kp LEFT_SHIFT  &trans        &trans           &trans        &kp LS(N9)    &kp LS(N0)    &kp PAGE_DOWN  &kp KP_MINUS     &kp KP_PLUS      &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3
-&trans          &trans        &kp PRINTSCREEN  &trans        &trans        &kp CAPS      &trans         &kp DELETE       &trans           &kp KP_NUMBER_0  &dot_comma       &kp KP_ENTER
-                              &trans           &trans        &trans        &trans        &trans         &trans           &trans           &trans
+&trans          &trans  &trans           &kp K_MUTE  &kp K_VOLUME_DOWN  &kp K_VOLUME_UP  &kp KP_EQUAL  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_SLASH     &kp HOME
+&trans          &trans  &trans           &trans      &kp LBKT           &kp RBKT         &kp KP_COMMA  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_ASTERISK  &kp PAGE_UP
+&kp LEFT_SHIFT  &trans  &trans           &trans      &kp LS(N9)         &kp LS(N0)       &kp KP_DOT    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_MINUS     &kp PAGE_DOWN
+&trans          &trans  &kp PRINTSCREEN  &trans      &trans             &kp CAPS         &trans        &kp DELETE       &kp KP_NUMBER_0  &kp KP_DOT       &kp KP_PLUS      &kp END
+                        &trans           &trans      &trans             &trans           &trans        &trans           &trans           &trans
             >;
         };
 
@@ -222,7 +231,7 @@
 
         SYSTEM_LAYER {
             display-name = "system_layer";
-            sensor-bindings = <&scroll_down_up>, <&volume_up_down>;
+            sensor-bindings = <&volume_up_down>, <&volume_up_down>;
 
             bindings = <
 &trans  &trans  &trans  &trans  &trans       &trans      &out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4
@@ -279,12 +288,30 @@
 
         layer_8 {
             bindings = <
-&trans  &kp LS(LC(T))  &kp F2           &kp UP           &trans       &kp LC(KP_NUMBER_0)  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LC(T)      &kp LEFT         &kp DOWN         &kp RIGHT    &kp LC(KP_PLUS)      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LC(W)      &trans           &kp LC(LS(TAB))  &kp LC(TAB)  &kp LC(KP_MINUS)     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans         &kp PRINTSCREEN  &trans           &trans       &trans               &trans  &trans  &trans  &trans  &trans  &trans
-                       &trans           &trans           &trans       &trans               &trans  &trans  &trans  &trans
+&trans  &kp LS(LC(T))  &kp F2           &kp UP           &trans       &kp LC(KP_NUMBER_0)  &trans  &trans     &trans     &trans     &trans  &trans
+&trans  &kp LC(T)      &kp LEFT         &kp DOWN         &kp RIGHT    &kp LC(KP_PLUS)      &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &mo 5   &trans
+&trans  &kp LC(W)      &trans           &kp LC(LS(TAB))  &kp LC(TAB)  &kp LC(KP_MINUS)     &trans  &mo 5      &mkp MB4   &mkp MB5   &trans  &trans
+&trans  &trans         &kp PRINTSCREEN  &trans           &trans       &trans               &trans  &trans     &trans     &trans     &trans  &trans
+                       &trans           &trans           &trans       &trans               &trans  &trans     &trans     &trans
             >;
+
+            sensor-bindings =
+                <&inc_dec_kp K_VOLUME_UP K_VOLUME_DOWN>,
+                <&inc_dec_kp K_VOLUME_UP K_VOLUME_DOWN>;
+        };
+
+        DJMAX_LAYER {
+            bindings = <
+&kp TAB       &kp Q        &kp W          &kp E            &kp R        &kp T          &kp Y   &kp U   &kp I      &kp O       &kp P             &kp BACKSPACE
+&kp NUMBER_1  &kp A        &kp S          &kp D            &kp F        &kp G          &kp H   &kp J   &kp K      &kp L       &kp LEFT_BRACKET  &kp NUMBER_2
+&kp LSHIFT    &kp Z        &kp X          &kp C            &kp V        &kp B          &kp N   &kp M   &kp COMMA  &kp PERIOD  &kp SLASH         &kp RSHIFT
+&kp ESC       &kp PAGE_UP  &kp PAGE_DOWN  &kp V            &kp B        &kp F4         &to 0   &kp N   &kp M      &kp SPACE   &kp ESC           &kp ENTER
+                           &allow_end     &allow_pagedown  &allow_home  &allow_pageup  &trans  &trans  &trans     &trans
+            >;
+
+            sensor-bindings =
+                <&scroll_up_down>,
+                <&inc_dec_kp K_VOLUME_UP K_VOLUME_DOWN>;
         };
     };
 };
