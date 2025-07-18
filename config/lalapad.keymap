@@ -210,11 +210,11 @@
             sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
 
             bindings = <
-&trans          &trans  &trans           &kp K_MUTE  &kp K_VOLUME_DOWN  &kp K_VOLUME_UP  &kp KP_EQUAL  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_SLASH     &kp HOME
-&trans          &trans  &trans           &trans      &kp LBKT           &kp RBKT         &kp KP_COMMA  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_ASTERISK  &kp PAGE_UP
-&kp LEFT_SHIFT  &trans  &trans           &trans      &kp LS(N9)         &kp LS(N0)       &kp KP_DOT    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_MINUS     &kp PAGE_DOWN
-&trans          &trans  &kp PRINTSCREEN  &trans      &trans             &kp CAPS         &trans        &kp DELETE       &kp KP_NUMBER_0  &kp KP_DOT       &kp KP_PLUS      &kp END
-                        &trans           &trans      &trans             &trans           &trans        &trans           &trans           &trans
+&trans          &trans  &trans           &kp C_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp EQUAL   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_SLASH     &kp HOME
+&trans          &trans  &trans           &trans      &kp LBKT           &kp RBKT         &kp COMMA   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_ASTERISK  &kp PAGE_UP
+&kp LEFT_SHIFT  &trans  &trans           &trans      &kp LS(N9)         &kp LS(N0)       &kp KP_DOT  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_MINUS     &kp PAGE_DOWN
+&trans          &trans  &kp PRINTSCREEN  &trans      &trans             &kp CAPS         &trans      &kp DELETE       &kp KP_NUMBER_0  &kp KP_DOT       &kp KP_PLUS      &kp END
+                        &trans           &trans      &trans             &trans           &trans      &trans           &trans           &trans
             >;
         };
 
@@ -231,7 +231,9 @@
 
         SYSTEM_LAYER {
             display-name = "system_layer";
-            sensor-bindings = <&volume_up_down>, <&volume_up_down>;
+            sensor-bindings =
+                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>,
+                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
 
             bindings = <
 &trans  &trans  &trans  &trans  &trans       &trans      &out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4
@@ -296,8 +298,8 @@
             >;
 
             sensor-bindings =
-                <&inc_dec_kp K_VOLUME_UP K_VOLUME_DOWN>,
-                <&inc_dec_kp K_VOLUME_UP K_VOLUME_DOWN>;
+                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>,
+                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         DJMAX_LAYER {
@@ -311,7 +313,7 @@
 
             sensor-bindings =
                 <&scroll_up_down>,
-                <&inc_dec_kp K_VOLUME_UP K_VOLUME_DOWN>;
+                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
     };
 };
