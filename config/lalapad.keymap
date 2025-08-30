@@ -197,11 +197,11 @@
             sensor-bindings = <&scroll_up_down>, <&scroll_up_down>;
 
             bindings = <
-&kp TAB    &kp Q         &kp W         &kp E            &kp R             &kp T          &kp Y          &kp U                 &kp I            &kp O       &kp P           &mt EQUAL MINUS
-&kp ESC    &kp A         &kp S         &kp D            &kp F             &kp G          &kp H          &kp J                 &kp K            &kp L       &mt2 SEMI LBKT  &mt2 SQT RBKT
-&kp LSHFT  &kp Z         &kp X         &kp C            &kp V             &kp B          &kp N          &kp M                 &kp COMMA        &kp PERIOD  &mt2 UP SLASH   &mt2 RSHIFT BSLH
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 8 SPACE      &lt 1 LANGUAGE_1  &lt 3 LANG2    &lt 3 LANG1    &mt RSHIFT BACKSPACE  &lt 2 ENTER      &kp LEFT    &kp DOWN        &kp RIGHT
-                         &allow_end    &allow_pagedown  &allow_home       &allow_pageup  &allow_pageup  &allow_home           &allow_pagedown  &allow_end
+&kp TAB    &kp Q         &kp W         &kp E            &kp R             &kp T          &kp Y          &kp U          &kp I            &kp O       &kp P            &kp EQUAL
+&kp ESC    &kp A         &kp S         &kp D            &kp F             &kp G          &kp H          &kp J          &kp K            &kp L       &mt2 SEMI MINUS  &kp SQT
+&kp LSHFT  &kp Z         &kp X         &kp C            &kp V             &kp B          &kp N          &kp M          &kp COMMA        &kp PERIOD  &mt2 UP SLASH    &mt2 RSHIFT BSLH
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 8 SPACE      &lt 1 LANGUAGE_1  &lt 3 LANG2    &lt 3 LANG1    &kp BACKSPACE  &lt 2 ENTER      &kp LEFT    &kp DOWN         &kp RIGHT
+                         &allow_end    &allow_pagedown  &allow_home       &allow_pageup  &allow_pageup  &allow_home    &allow_pagedown  &allow_end
             >;
         };
 
@@ -213,8 +213,8 @@
 
             bindings = <
 &trans          &trans  &trans           &kp C_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp EQUAL   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_SLASH     &kp HOME
-&trans          &trans  &trans           &trans      &kp LBKT           &kp RBKT         &kp COMMA   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_ASTERISK  &kp PAGE_UP
-&kp LEFT_SHIFT  &trans  &trans           &trans      &kp LS(N9)         &kp LS(N0)       &kp KP_DOT  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_MINUS     &kp PAGE_DOWN
+&trans          &trans  &trans           &trans      &trans             &trans           &kp COMMA   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_ASTERISK  &kp PAGE_UP
+&kp LEFT_SHIFT  &trans  &trans           &trans      &trans             &trans           &kp KP_DOT  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_MINUS     &kp PAGE_DOWN
 &trans          &trans  &kp PRINTSCREEN  &trans      &trans             &kp CAPS         &trans      &kp DELETE       &kp KP_NUMBER_0  &kp KP_DOT       &kp KP_PLUS      &kp END
                         &trans           &trans      &trans             &trans           &trans      &trans           &trans           &trans
             >;
@@ -223,11 +223,11 @@
         TERTIARY_LAYER {
             display-name = "tertiary_layer";
             bindings = <
-&trans          &kp F1        &kp F2        &kp F3           &kp F4             &kp F5  &kp F6            &kp F7        &kp F8        &kp F9        &kp F10       &kp F11
-&kp TILDE       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3     &kp NUMBER_4       &kp N5  &kp NUMBER_6      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp F12
-&kp LEFT_SHIFT  &trans        &trans        &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &trans  &kp RS(NUMBER_2)  &kp TILDE     &trans        &trans        &trans        &kp RIGHT_SHIFT
-&trans          &trans        &trans        &trans           &trans             &trans  &trans            &trans        &trans        &trans        &trans        &trans
-                              &trans        &trans           &trans             &trans  &trans            &trans        &trans        &trans
+&trans          &kp F1            &kp F2            &kp F3            &kp F4            &kp F5            &kp F6            &kp F7             &kp F8         &kp F9       &kp F10    &kp F11
+&trans          &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(N5)        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp SEMI       &kp SQT      &kp TILDE  &kp F12
+&kp LEFT_SHIFT  &kp LS(NUMBER_6)  &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &kp LS(NUMBER_0)  &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LS(COMMA)  &kp LS(DOT)  &trans     &kp RIGHT_SHIFT
+&trans          &trans            &trans            &trans            &trans            &trans            &trans            &trans             &trans         &trans       &trans     &trans
+                                  &trans            &trans            &trans            &trans            &trans            &trans             &trans         &trans
             >;
 
             sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
