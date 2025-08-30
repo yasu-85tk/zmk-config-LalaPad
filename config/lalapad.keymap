@@ -297,7 +297,7 @@
 &trans  &kp LS(LC(T))  &kp F2           &kp UP           &trans       &kp LC(KP_NUMBER_0)  &trans  &trans     &trans     &trans     &trans  &trans
 &trans  &kp LC(T)      &kp LEFT         &kp DOWN         &kp RIGHT    &kp LC(KP_PLUS)      &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &mo 5   &trans
 &trans  &kp LC(W)      &trans           &kp LC(LS(TAB))  &kp LC(TAB)  &kp LC(KP_MINUS)     &trans  &mo 5      &mkp MB4   &mkp MB5   &trans  &trans
-&trans  &trans         &kp PRINTSCREEN  &trans           &trans       &trans               &trans  &trans     &trans     &trans     &trans  &trans
+&trans  &trans         &kp PRINTSCREEN  &trans           &trans       &trans               &trans  &mkp MB4   &mkp MB5   &trans     &trans  &trans
                        &trans           &trans           &trans       &trans               &trans  &trans     &trans     &trans
             >;
 
